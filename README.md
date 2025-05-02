@@ -49,7 +49,7 @@ sudo ufw allow from 192.168.1.141 to any port 22 proto tcp comment 'Allow SSH fr
 sudo ufw allow from 192.168.1.131 to any port 80 proto tcp comment 'Allow HTTP from my Mac'
 
 # Block outgoing access to gambling websites
-sudo ufw deny out to 185.27.134.10 comment 'Block bet365 access'
+sudo ufw deny out to 5.226.179.10 comment 'Block bet365 access'
 
 ⚠️ **Be careful!**  
 If you want to copy and use these commands on your own personal VM, keep in mind that your devices will have different private IP addresses configured.  
