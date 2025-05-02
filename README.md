@@ -35,7 +35,7 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 
 # Allow SSH only from my Windows personal device
-sudo ufw allow from 192.168.1.141 to any port 22 proto tcp comment 'Allow SSH from my Mac'
+sudo ufw allow from 192.168.1.141 to any port 22 proto tcp comment 'Allow SSH from my Windows'
 
 # Allow HTTP only from my Mac personal device
 sudo ufw allow from 192.168.1.131 to any port 80 proto tcp comment 'Allow HTTP from my Mac'
