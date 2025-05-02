@@ -17,10 +17,10 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 
 # 3. Allow SSH only from your personal device (replace with your IP)
-sudo ufw allow from 192.168.1.141 to any port 22 proto tcp comment "Allow SSH from my Mac"
+sudo ufw allow from 192.168.1.141 to any port 22 proto tcp comment "Allow SSH from my Windows"
 
 # 4. Allow HTTP (port 80) only from your personal device
-sudo ufw allow from 192.168.1.141 to any port 80 proto tcp comment "Allow HTTP from my Mac"
+sudo ufw allow from 192.168.1.131 to any port 80 proto tcp comment "Allow HTTP from my Mac"
 
 # 5. Block outgoing access to gambling site (replace with resolved IP)
 sudo ufw deny out to 185.27.134.10 comment "Block bet365.com"
