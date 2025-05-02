@@ -23,7 +23,7 @@ sudo ufw allow from 192.168.1.141 to any port 22 proto tcp comment "Allow SSH fr
 sudo ufw allow from 192.168.1.131 to any port 80 proto tcp comment "Allow HTTP from my Mac"
 
 # 5. Block outgoing access to gambling site (replace with resolved IP)
-sudo ufw deny out to 185.27.134.10 comment "Block bet365.com"
+sudo ufw deny out to 5.226.179.10 comment "Block bet365.com"
 
 # 6. Enable logging (optional but useful for debugging)
 sudo ufw logging on
