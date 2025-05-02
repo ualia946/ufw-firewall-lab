@@ -27,6 +27,14 @@ The environment simulates a home network where:
 - Two host machines (Mac and Windows) act as external clients.
 - Bridge mode is enabled on one of the hosts so that all devices are connected to the same local network.
 
+## 🧱 UFW Command Structure Reference
+
+For most custom firewall rules, you can follow this general syntax:
+
+```bash
+sudo ufw [allow|deny] from <source IP> to <destination IP|any> port <port number> proto <tcp|udp> comment "optional description"
+
+
 ## 🔐 Firewall Rules Implemented
 
 ```bash
