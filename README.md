@@ -33,7 +33,7 @@ For most custom firewall rules, you can follow this general syntax:
 
 ```bash
 sudo ufw [allow|deny] from <source IP> to <destination IP|any> port <port number> proto <tcp|udp> comment "optional description"
-
+```
 
 ## 🔐 Firewall Rules Implemented
 
