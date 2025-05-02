@@ -37,8 +37,15 @@ sudo ufw default allow outgoing
 # Allow SSH only from my Windows personal device
 sudo ufw allow from 192.168.1.141 to any port 22 proto tcp comment 'Allow SSH from my Mac'
 
-# Allow HTTP only from my MAC personal device
-sudo ufw allow from 192.168.1.141 to any port 80 proto tcp comment 'Allow HTTP from my Mac'
+# Allow HTTP only from my Mac personal device
+sudo ufw allow from 192.168.1.131 to any port 80 proto tcp comment 'Allow HTTP from my Mac'
 
 # Block outgoing access to gambling websites
 sudo ufw deny out to 185.27.134.10 comment 'Block bet365 access'
+
+⚠️ **Be careful!**  
+If you want to copy and use these commands on your own personal VM, keep in mind that your devices will have different private IP addresses configured.  
+Make sure to adjust the IPs in the firewall rules accordingly.
+
+There's no need to copy these rules if you don't want to. It's just an applicable example.
+
