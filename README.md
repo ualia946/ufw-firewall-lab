@@ -2,6 +2,8 @@
 
 This project demonstrates how to configure and test a firewall using UFW (Uncomplicated Firewall) on a Linux virtual machine. The goal is to simulate real-world traffic filtering scenarios and show how UFW can enforce network security through stateful rules.
 
+---
+
 ## 🧠 Objectives
 
 - Understand the difference between firewalls and ACLs (Access Control Lists)
@@ -9,6 +11,8 @@ This project demonstrates how to configure and test a firewall using UFW (Uncomp
 - Use UFW to allow or deny connections based on IP, port, and protocol
 - Demonstrate how stateful firewalls can remember connection context
 - Block access to unwanted websites via IP-based rules
+
+---
 
 ## 🛠️ Tools and Technologies
 
@@ -19,21 +23,24 @@ This project demonstrates how to configure and test a firewall using UFW (Uncomp
 - dig, curl, ping (for DNS/IP and connection tests)
 - Optional: PuTTY (SSH client on Windows)
 
+---
+
 ## 🖥️ Lab Setup
 
 The environment simulates a home network where:
 
 - An Ubuntu VM (`192.168.1.179` private IPv4) is used as a secure internal server, where UFW (Uncomplicated Firewall) is configured and tested.
 - Two host machines (Mac and Windows) act as external clients.
+  - Mac: `192.168.1.131`
+  - Windows: `192.168.1.141`
 - Bridge mode is enabled on one of the hosts so that all devices are connected to the same local network.
+- The firewall acts as a **host-based firewall** protecting only the Ubuntu VM.
 
-## 🧱 UFW Command Structure Reference
+### 🖼️ Network Diagram
 
-For most custom firewall rules, you can follow this general syntax:
+![Lab Network Diagram](screenshots/network_diagram_host_firewall.png)
 
-```bash
-sudo ufw [allow|deny] from <source IP> to <destination IP|any> port <port number> proto <tcp|udp> comment "optional description"
-```
+---
 
 ## 🔐 Firewall Rules Implemented
 
@@ -50,6 +57,7 @@ sudo ufw allow from 192.168.1.131 to any port 80 proto tcp comment 'Allow HTTP f
 
 # Block outgoing access to gambling websites
 sudo ufw deny out to 5.226.179.10 comment 'Block bet365 access'
+```
 
 ⚠️ **Be careful!**  
 If you want to copy and use these commands on your own personal VM, keep in mind that your devices will have different private IP addresses configured.  
@@ -57,3 +65,33 @@ Make sure to adjust the IPs in the firewall rules accordingly.
 
 There's no need to copy these rules if you don't want to. It's just an applicable example.
 
+---
+
+## 📁 Folder: `explanations/`
+
+This folder contains supporting documents that explain:
+
+- Why ICMP (ping) requests may still work despite using `default deny incoming` in UFW
+- The practical and conceptual differences between ACLs and firewalls
+- Additional insights into protocol-specific behaviors with UFW
+
+These documents are written to consolidate theoretical understanding with practical observations from the lab.
+
+---
+
+## 📸 Screenshots
+
+You can find visual evidence of all connection attempts and rule enforcement in the [`screenshots/`](screenshots) folder.  
+It includes examples of:
+
+- Successful and blocked HTTP access
+- SSH requests
+- Ping behavior
+- Script execution
+
+---
+
+## ✅ Conclusion
+
+This lab provides hands-on experience in configuring a basic but effective firewall using UFW.  
+It demonstrates how host-based firewalls can provide secure, stateful control over network traffic and helps reinforce foundational network security concepts.
